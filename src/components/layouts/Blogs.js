@@ -4,25 +4,18 @@ import axios from 'axios';
 
 const Blogs = () => {
 
-    const [blogs, setBlogs] = useState(null);
+    const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
 
         async function fetchData() {
-            try {
 
-                const { data } = await axios.get(`/api/read`);
-                if (data.success) {
-                    setBlogs(data.blogs);
-                }
-            }
-            catch (error) {
-                console.log(error);
+            const { data } = await axios.get(`/api/read`);
+            if (data.success) {
+                setBlogs(data.blogs);
             }
         }
-        if (blogs === null) {
-            fetchData();
-        }
+        fetchData();
     }, [blogs]);
     const limitedBlogs = blogs?.slice(0, 6);
 

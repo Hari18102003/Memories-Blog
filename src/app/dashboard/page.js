@@ -11,7 +11,7 @@ const DashboardPage = () => {
 
     const session = useSession();
     const { status } = session;
-    const [blogs, setBlogs] = useState(null);
+    const [blogs, setBlogs] = useState([]);
     const [search, setSearch] = useState("");
     const [searchBlogs, setSearchBlogs] = useState(null);
 
@@ -29,7 +29,7 @@ const DashboardPage = () => {
     }, [blogs]);
 
     useEffect(() => {
-        if (blogs) {
+        if (blogs.length > 0) {
             const filters = blogs.filter(blog => (
                 blog.title.toLowerCase().includes(search.toLowerCase()) ||
                 blog.tag.toLowerCase().includes(search.toLowerCase()) || blog.creator.username.toLowerCase().includes(search.toLowerCase())
