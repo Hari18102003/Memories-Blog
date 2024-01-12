@@ -26,7 +26,7 @@ const DashboardPage = () => {
             }
         }
         fetchData();
-    }, [blogs]);
+    }, []);
 
     useEffect(() => {
         if (blogs.length > 0) {
