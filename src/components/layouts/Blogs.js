@@ -10,7 +10,7 @@ const Blogs = () => {
 
         async function fetchData() {
 
-            const { data } = await axios.get("http://127.0.0.1:3000/api/read");
+            const { data } = await axios.get("/api/read");
             if (data.success) {
                 setBlogs(data.blogs);
             }
