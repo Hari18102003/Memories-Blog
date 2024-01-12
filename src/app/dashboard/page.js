@@ -20,7 +20,7 @@ const DashboardPage = () => {
 
         async function fetchData() {
 
-            const { data } = await axios.get("/api/read");
+            const { data } = await axios.get("/api/read", { headers: { 'Cache-Control': 'no-store' } });
             if (data.success) {
                 setBlogs(data.blogs);
             }
