@@ -28,17 +28,12 @@ const DashboardPage = () => {
     }, [blogs]);
 
     useEffect(() => {
-        if (blogs.length > 0) {
-            const filters = blogs.filter(blog => (
-                blog.title.toLowerCase().includes(search.toLowerCase()) ||
-                blog.tag.toLowerCase().includes(search.toLowerCase()) || blog.creator.username.toLowerCase().includes(search.toLowerCase())
-            ));
-            setSearchBlogs(filters);
-        }
-        else {
-            setSearchBlogs(blogs);
-        }
-    }, [search]);
+        const filters = blogs.filter(blog => (
+            blog.title.toLowerCase().includes(search.toLowerCase()) ||
+            blog.tag.toLowerCase().includes(search.toLowerCase()) || blog.creator.username.toLowerCase().includes(search.toLowerCase())
+        ));
+        setSearchBlogs(filters);
+    }, [search, blogs]);
 
     if (status === "loading") {
         return "Loading...";

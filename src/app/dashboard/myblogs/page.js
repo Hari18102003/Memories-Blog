@@ -27,31 +27,19 @@ const MyBlogPage = () => {
             }
 
         }
-        if (blogs === null) {
-            fetchData();
-        } else {
-            const filteredBlogs = blogs.filter(blog => blog.creator.email === email);
-            if (filteredBlogs.length > 0) {
-                setMyBlogs(filteredBlogs);
-            } else {
-                setMyBlogs(null);
-            }
-
-        }
         fetchData();
+        const filteredBlogs = blogs?.filter(blog => blog.creator.email === email);
+        setMyBlogs(filteredBlogs);
 
     }, [blogs]);
 
     useEffect(() => {
-        if (myblogs) {
-            const filters = myblogs.filter(blog => (
-                blog.title.toLowerCase().includes(search.toLowerCase()) ||
-                blog.tag.toLowerCase().includes(search.toLowerCase())
-            ));
-            setSearchBlogs(filters);
-        } else {
-            setSearchBlogs(myblogs);
-        }
+        const filters = myblogs?.filter(blog => (
+            blog.title.toLowerCase().includes(search.toLowerCase()) ||
+            blog.tag.toLowerCase().includes(search.toLowerCase())
+        ));
+        setSearchBlogs(filters);
+
     }, [search, myblogs]);
 
 
