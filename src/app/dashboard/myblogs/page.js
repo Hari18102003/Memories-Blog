@@ -63,7 +63,7 @@ const MyBlogPage = () => {
                     <input type="search" id="default-search" value={search} onChange={(e) => setSearch(e.target.value)} className="px-4 py-2 w-72 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 outline-none focus:border-morange" placeholder="Search Tags, Blogs.." />
                 </div>
             </div>
-            <div className='flex justify-center md:grid md:grid-cols-3 gap-3'>
+            <div className='justify-center grid grid-cols-2 md:grid-cols-3 gap-3'>
                 {searchBlogs && (
                     searchBlogs.map(blog => (
                         <Blog

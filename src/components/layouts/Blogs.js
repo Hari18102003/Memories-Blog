@@ -23,7 +23,7 @@ const Blogs = () => {
     return (
         <section className='my-5 md:my-10 sm:px-2'>
             <h1 className='text-center text-xl md:text-2xl text-morange font-semibold mb-8 md:mb-12 '>Recent Memories</h1>
-            <div className='md:grid flex justify-center md:grid-cols-3 gap-3'>
+            <div className='px-1 grid grid-cols-2 md:grid-cols-3 gap-3'>
                 {limitedBlogs && (
                     limitedBlogs.map(blog => (
                         <Blog
