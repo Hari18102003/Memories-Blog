@@ -8,7 +8,7 @@ const Blog = ({ blog, setSearch }) => {
                 <img className="rounded-t-lg w-full h-[150px]" src={blog.image} alt="" />
             </Link>
             <div className="px-5 py-3">
-                <Link href={""} onClick={() => setSearch(blog.tag)} className='text-blue-400 text-xs'>#{blog.tag}</Link>
+                <p onClick={() => setSearch(blog.tag)} className='text-blue-400 text-xs'>#{blog.tag}</p>
                 <Link href={`/dashboard/blog/${blog._id}`}>
                     <h5 className="text-lg font-semibold tracking-tight">{blog.title}</h5>
                     <p className='text-gray-500 text-xs'>{blog.createdAt}</p>

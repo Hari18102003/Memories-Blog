@@ -24,7 +24,7 @@ const DashboardBlog = ({ blog, setSearch }) => {
             </div>
 
             <div className="p-5 flex flex-col justify-between">
-                <Link href={""} onClick={() => setSearch(blog.tag)} ><p className='text-blue-400 text-xs md:text-sm mb-1'>#{blog.tag}</p></Link>
+                <p onClick={() => setSearch(blog.tag)} className='text-blue-400 text-xs md:text-sm mb-1'>#{blog.tag}</p>
                 <Link href={`/dashboard/blog/${blog._id}`}>
                     <h4 className="block mb-2 font-sans text-xl md:text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                         {blog.title}
