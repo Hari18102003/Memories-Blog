@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from 'react'
 import Blog from '../blogItem/landingpage/Blog'
 import axios from 'axios';
@@ -10,7 +11,7 @@ const Blogs = () => {
 
         async function fetchData() {
 
-            const { data } = await axios.get("/api/read");
+            const { data } = await axios.get(`/api/read`);
             if (data.success) {
                 setBlogs(data.blogs);
             }

@@ -15,12 +15,11 @@ const DashboardPage = () => {
     const [search, setSearch] = useState("");
     const [searchBlogs, setSearchBlogs] = useState(null);
 
-
     useEffect(() => {
 
         async function fetchData() {
 
-            const { data } = await axios.get("/api/read");
+            const { data } = await axios.get(`/api/read`);
             if (data.success) {
                 setBlogs(data.blogs);
             }
