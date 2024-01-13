@@ -17,7 +17,7 @@ const Blogs = () => {
             }
         }
         fetchData();
-    }, []);
+    }, [blogs]);
     const limitedBlogs = blogs?.slice(0, 6);
 
     return (
