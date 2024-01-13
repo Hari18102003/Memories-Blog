@@ -30,7 +30,7 @@ const DashboardBlog = ({ blog, setSearch }) => {
                         {blog.title}
                     </h4>
                 </Link>
-                <p className="block mb-4 font-sans text-sm md:text-md text-base antialiased font-normal leading-relaxed text-gray-700">
+                <p className="block mb-4 font-sans text-sm md:text-md antialiased font-normal leading-relaxed text-gray-700">
                     {blog.content.length > 100 ? (blog.content.substring(0, 100) + "....readmore") : (blog.content)}
                 </p>
                 <Link href={""}>

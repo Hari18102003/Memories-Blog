@@ -38,7 +38,7 @@ const DashboardPage = () => {
         else {
             setSearchBlogs(blogs);
         }
-    }, [search, blogs]);
+    }, [search]);
 
     if (status === "loading") {
         return "Loading...";
